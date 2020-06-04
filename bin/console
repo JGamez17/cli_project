@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/got_cli.rb'
+# require_relative '../got_cli/cli.rb'
+
+# CLI.new.call
+
+Pry.start 

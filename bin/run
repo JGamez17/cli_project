@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/got_cli.rb'
+
+Cli.new.call
+# -instantiates a new CLI object, instantiates and returns a new CLI object and then call run instance method object returned 
+

@@ -1,0 +1,17 @@
+flow 
+classes 
+
+API class
+    GET requests
+    initial requests will list got_characters
+    iterate list and calling got_characters.new to instantiate new characters
+
+CLI class- handles all input and output
+    puts "characters are coming"
+    first call API class to get got_characters
+    shows a list of characters
+    list books
+
+characters class
+    create and save got_characters objects
+    got_characters will be instantiated with name and book
