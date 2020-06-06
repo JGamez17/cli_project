@@ -1,4 +1,4 @@
-class Houses
+class House
     attr_accessor :name
     @@all = []
 

@@ -7,11 +7,11 @@ class Api
     response = RestClient.get(BASE_URL)
     houses = JSON.parse(response.body)
     # binding.pry
-    houses.each do |houses|
-      puts houses["name"]
-      name = houses["name"]
+    houses.each do |house|
+      puts house["name"]
+      name = house["name"]
       
-      Houses.new(name)
+      House.new(name)
    
     end
   end
