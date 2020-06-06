@@ -1,5 +1,3 @@
-puts "API class loaded"
-
 class Api 
   BASE_URL = 'https://www.anapioficeandfire.com/api/houses/?"name"'
 

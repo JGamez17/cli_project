@@ -64,7 +64,8 @@ class Cli
     end
 
     def winter 
-        puts "Winter is Coming, find your houses"
+        puts "Winter is Coming, find your house"
+        sleep 1
     end
 
     def print_goodbye
