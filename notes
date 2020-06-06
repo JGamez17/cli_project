@@ -7,10 +7,11 @@ API class
     iterate list and calling got_characters.new to instantiate new characters
 
 CLI class- handles all input and output
-    puts "characters are coming"
-    first call API class to get got_characters
-    shows a list of characters
-    list books
+    puts "Winter is coming, choose your house"
+    first call API class to get got_house (Api.get_houses)
+    Api.get_houses is in CLI class and not main so houses do not keep getting instantiated 
+    list houses
+    exit point- "Would you like to search again ?"
 
 characters class
     create and save got_characters objects

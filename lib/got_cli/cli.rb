@@ -1,4 +1,4 @@
-puts "Cli class loaded"
+
 class Cli 
  
     def call
@@ -13,6 +13,8 @@ class Cli
         name = prompt_selection
         house = find_house?(name.to_i - 1)
         print_house_details(house)
+        print_continue
+        continue?(prompt_selection)
     end
 
     def print_house_details(house)
@@ -27,7 +29,7 @@ class Cli
     end
 
     def print_selection_prompt
-        puts "Please select a house by name for more information"
+        puts "Please select a house number for more information"
     end
 
     def print_error_message
@@ -48,8 +50,25 @@ class Cli
         end
     end
 
+    def print_continue
+        puts "Would you like to seach again?"
+    end
+
+    def continue?(choice)
+        if choice == 'y'
+            main
+        else 
+            print_goodbye
+            exit
+        end
+    end
+
     def winter 
-        puts "Winter is Coming, learn your houses"
+        puts "Winter is Coming, find your houses"
+    end
+
+    def print_goodbye
+        puts "Goodbye"
     end
    
 end

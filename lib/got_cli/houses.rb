@@ -1,5 +1,3 @@
-puts "House class loaded"
-
 class House
     attr_accessor :name, :region, :coat_of_arms
     @@all = []
