@@ -1,4 +1,4 @@
-
+puts "API class loaded"
 
 class Api 
   BASE_URL = 'https://www.anapioficeandfire.com/api/houses/?"name"'
@@ -6,12 +6,13 @@ class Api
   def self.get_houses
     response = RestClient.get(BASE_URL)
     houses = JSON.parse(response.body)
-    # binding.pry
+  
     houses.each do |house|
-      puts house["name"]
       name = house["name"]
+      region = house["region"]
+      coat_of_arms = house["coatOfArms"]
       
-      House.new(name)
+      House.new(name, region, coat_of_arms)
    
     end
   end

@@ -1,3 +1,4 @@
+puts "Cli class loaded"
 class Cli 
  
     def call
@@ -10,17 +11,19 @@ class Cli
         print_all
         print_selection_prompt
         name = prompt_selection
-        house = find_house?(name)
-        print_house_details(home)
+        house = find_house?(name.to_i - 1)
+        print_house_details(house)
     end
 
     def print_house_details(house)
-        #pass in house object if found by find_house
-        #puts all of the attributes of that house object
+        system "clear"
+            puts "NAME: #{house.name}"
+            puts "REGION: #{house.region}"
+            puts "COATOFARMS: #{house.coat_of_arms}"
     end
 
     def print_all
-        House.all.each { |prints| puts "#{prints.name}" }
+        House.all.each_with_index { |prints, index| puts  "#{index + 1}.) #{prints.name}"}
     end
 
     def print_selection_prompt
@@ -36,10 +39,8 @@ class Cli
     end
 
     def find_house?(user_input)
-        array_of_house_objects = House.all
-        house = array_of_house_objects.find{|house| house.name == user_input}
-        binding.pry
-        if !house
+        house = House.all[user_input]
+        if !house #if user enters invalid num, house data will not load and error message prints
             print_error_message
             main
         else
